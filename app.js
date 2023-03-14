@@ -43,7 +43,7 @@ const displayPeriod = (data, period, duration) => {
 const showdata = async () => {
   const data = await fetchData();
   //   console.log(data);
-  displayPeriod(data, 'daily', 'day');
+  displayPeriod(data, 'weekly', 'week');
 
   weeklyBtn.addEventListener('click', () => {
     displayPeriod(data, 'weekly', 'week');
