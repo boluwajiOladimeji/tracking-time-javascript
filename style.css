@@ -155,11 +155,11 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 10px;
 }
 
 .current {
   font-size: 3rem;
+  margin-right: 10px;
 }
 
 .past {
