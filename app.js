@@ -31,8 +31,14 @@ const displayPeriod = (data, period, duration) => {
                 <img src="./images/icon-ellipsis.svg" alt="" />
               </div>
               <div class="duration">
-                <p class="current">${time.current}hrs</p>
-                <p class="past">last ${duration}  - ${time.previous} hrs</p>
+                <p class="current">${
+                  time.current <= 1 ? time.current + 'hr' : time.current + 'hrs'
+                }</p>
+                <p class="past">${
+                  duration === 'day' ? 'Yesterday' : 'last ' + duration
+                } -  ${
+        time.previous <= 1 ? time.previous + 'hr' : time.previous + 'hrs'
+      }</p>
               </div>
             </div>
           </article>`;
@@ -58,8 +64,6 @@ const showdata = async () => {
   });
 };
 
-showdata();
-
 function addActive() {
   allBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -72,3 +76,7 @@ function addActive() {
 }
 
 addActive();
+
+window.addEventListener('DOMContentLoaded', () => {
+  showdata();
+});
